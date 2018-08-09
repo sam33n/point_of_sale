@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="report_pos_inventory_details"
+        model="pos.inventory.wizard"
+        string="Inventory Details"
+        report_type="qweb-pdf"
+        name="point_of_sale.report_inventory_details"
+        file="point_of_sale.report_inventory_details"
+    />
+
+    <record id="action_inventory_details_report" model="ir.actions.report.xml">
+        <field name="name">Inventory Details</field>
+        <field name="model">pos.inventory.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">point_of_sale.report_inventory_details</field>
+    </record>
+
+</odoo>

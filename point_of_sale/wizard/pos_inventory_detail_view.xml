@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_pos_inventory_details_wizard" model="ir.ui.view">
+            <field name="name">pos.inventory.wizard.form</field>
+            <field name="model">pos.inventory.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Inventory Details">
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Print" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_report_pos_inventory_details" model="ir.actions.act_window">
+            <field name="name">Inventory Details</field>
+            <field name="res_model">pos.inventory.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_report_inventory_details" name="Inventory Details" action="action_report_pos_inventory_details" parent="menu_point_rep" sequence="6"/>
+
+</odoo>
